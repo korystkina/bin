@@ -1,6 +1,6 @@
-package com.parser; 
+package com.main; 
 
-import java.util.scanner; 
+import java.util.Scanner; 
 public class Bin 
 { 
 public static void main(String args[]) 
