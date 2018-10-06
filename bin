@@ -3,46 +3,46 @@ package com.main;
 import java.util.Scanner; 
 public class Bin 
 { 
-public static void main(String args[]) 
+  public static void main(String args[]) 
 { 
-try 
+  try 
 { 
-Scanner scan = new Scanner(System.in); 
-long n = scan.nextLong(); 
-printType(n); 
-System.out.println(toBinaryString(n)); 
-}catch (Exception c){ 
-System.out.println("Very big number"); 
+  Scanner scan = new Scanner(System.in); 
+  long n = scan.nextLong(); 
+  printType(n); 
+  System.out.println(toBinaryString(n)); 
+  }catch (Exception c){ 
+  System.out.println("Very big number"); 
 } 
 } 
-private static String toBinaryString(long i){ 
-String ans = ""; 
-long ci = i; 
-int sign = ( ci < 0 )? -1: 1; 
-ci*= sign; 
-i*= sign; 
-long res = 0; 
-String bit; 
+  private static String toBinaryString(long i){ 
+  String ans = ""; 
+  long ci = i; 
+  int sign = ( ci < 0 )? -1: 1; 
+  ci*= sign; 
+  i*= sign; 
+  long res = 0; 
+  String bit; 
 
-while (i > 0){ 
-i »= 1; 
-res++; 
+  while (i > 0){ 
+    i »= 1; 
+    res++; 
 } 
-while ( —res >= 0 ){ 
-bit = ((( ci & (1 « res)) == 0)) ? "0" : "1"; 
-ans += bit; 
+  while ( —res >= 0 ){ 
+    bit = ((( ci & (1 « res)) == 0)) ? "0" : "1"; 
+    ans += bit; 
 } 
-return ( sign > 0 )? "0" + ans : "1" + ans; 
+  return ( sign > 0 )? "0" + ans : "1" + ans; 
 } 
-private static void printType(long n){ 
-if (-129 < n && n < 128) 
-System.out.print("byte "); 
-else if(-32769 < n && n < 32768) 
-System.out.print("short "); 
-else if(-2147483649l < n && n < 2147483648l) 
-System.out.print("int "); 
-else 
-System.out.print("long "); 
-System.out.print("\n"); 
+  private static void printType(long n){ 
+    if (-129 < n && n < 128) 
+      System.out.print("byte "); 
+      else if(-32769 < n && n < 32768) 
+      System.out.print("short "); 
+      else if(-2147483649l < n && n < 2147483648l) 
+      System.out.print("int "); 
+      else 
+      System.out.print("long "); 
+      System.out.print("\n"); 
 } 
 }
